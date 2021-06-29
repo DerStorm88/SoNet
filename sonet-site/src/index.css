@@ -36,3 +36,7 @@
 .term-preview-author {
   text-align: right;
 }
+
+.term-preview a {
+  text-decoration: none;
+}

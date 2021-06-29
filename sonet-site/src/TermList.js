@@ -1,11 +1,14 @@
-const TermList = ({ terms, title}) => {
+import { Link } from "react-router-dom";
+
+const TermList = ({ terms}) => {
   return (
     <div className="term-list">
-      <h2>{title}</h2>
       {terms.map((term) => (
         <div className="term-preview" key={term.id}>
-          <h2>{term.title}</h2>
-          <p className="term-preview-author">Written by {term.author}</p>
+          <Link to={`/terms/${term.id}`}>
+            <h2>{term.title}</h2>
+            <p className="term-preview-author">Written by {term.author}</p>
+          </Link>
         </div>
       ))}
     </div>
