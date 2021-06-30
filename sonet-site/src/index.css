@@ -33,24 +33,24 @@
   padding: 20px;
 }
 
-.term-preview-author {
+.topic-preview-author {
   text-align: right;
 }
 
-.term-preview a {
+.topic-preview a {
   text-decoration: none;
 }
 
-.term-details h2 {
+.topic-details h2 {
   font-size: 20px;
   color: #e9967a;
   margin-bottom: 10px;
 }
-.term-details div {
+.topic-details div {
   margin: 20px 0;
 }
 
-.term-details p {
+.topic-details p {
   text-align: right;
 }
 

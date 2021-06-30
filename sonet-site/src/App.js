@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
 import HomePage from "./HomePage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NewTerm from "./Create";
-import TermDetails from "./TermDetails";
+import NewTopic from "./Create";
+import TopicDetails from "./TopicDetails";
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
               <HomePage />
             </Route>
             <Route path="/create">
-              <NewTerm />
+              <NewTopic />
             </Route>
-            <Route path="/terms/:id">
-              <TermDetails />
+            <Route path="/topics/:id">
+              <TopicDetails />
             </Route>
           </Switch>
         </div>

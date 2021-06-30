@@ -1,5 +1,5 @@
 {
-  "terms": [
+  "topics": [
     {
       "title": "How do I check if an array includes a value in JavaScript?",
       "body": "What is the most concise and efficient way to find out if a JavaScript array contains a value?",
@@ -11,6 +11,12 @@
       "body": "How can I check whether thats the case?",
       "author": "palm",
       "id": 2
+    },
+    {
+      "title": "asdasd",
+      "body": "asdasd",
+      "author": "adasdd",
+      "id": 3
     }
   ]
 }

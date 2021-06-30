@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const NewTerm = () => {
+const NewTopic = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
@@ -12,14 +12,14 @@ const NewTerm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const term = { title, body, author };
+    const topic = { title, body, author };
 
     setLoading(true);
 
-    fetch("http://localhost:8000/terms", {
+    fetch("http://localhost:8000/topics", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(term),
+      body: JSON.stringify(topic),
     }).then(() => {
       setLoading(false);
       backHome.push('/');
@@ -28,35 +28,35 @@ const NewTerm = () => {
 
   return (
     <div className="create">
-      <h2>Add a New Term</h2>
+      <h2>Add a New Topic</h2>
       <form onSubmit={handleSubmit}>
-        <label>Term title:</label>
+        <label>Topic title:</label>
         <input
           type="text"
           value={title}
           required
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Term body:</label>
+        <label>Topic body:</label>
         <textarea
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
         />
-        <label>Term author:</label>
+        <label>Topic author:</label>
         <input
           required
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
         {loading ? (
-          <button disabled>Adding Term</button>
+          <button disabled>Adding Topic</button>
         ) : (
-          <button>Add Term</button>
+          <button>Add Topic</button>
         )}
       </form>
     </div>
   );
 };
 
-export default NewTerm;
+export default NewTopic;

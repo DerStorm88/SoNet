@@ -1,18 +1,18 @@
-import TermList from "./TermList";
+import TopicList from "./TopicList";
 import useFetch from "./useFetch";
 
 const HomePage = () => {
   const {
-    data: terms,
+    data: topics,
     loading,
     error,
-  } = useFetch("http://localhost:8000/terms");
+  } = useFetch("http://localhost:8000/topics");
   
   return (
     <div className="home-page">
       {error && <div>{error}</div>}
       {loading && <div>Loading</div>}
-      {terms && <TermList terms={terms} />}
+      {topics && <TopicList topics={topics} />}
     </div>
   );
 };
