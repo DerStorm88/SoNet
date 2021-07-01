@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const TopicDetails = () => {
@@ -8,6 +8,15 @@ const TopicDetails = () => {
     error,
     loading,
   } = useFetch("http://localhost:8000/topics/" + id);
+  const backHome = useHistory();
+
+  function handleClick () {
+    fetch('http://localhost:8000/topics/' + id, {
+      method: 'DELETE'
+    }).then(() => {
+      backHome.push('/')
+    })
+  }
 
   return (
     <div className="topic-details">
@@ -18,6 +27,7 @@ const TopicDetails = () => {
           <h2>{topic.title}</h2>
           <p>Written by {topic.author}</p>
           <div>{topic.body}</div>
+          <button onClick={handleClick}>Delete</button>
         </div>
       )}
     </div>

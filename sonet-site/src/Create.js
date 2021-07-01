@@ -22,7 +22,7 @@ const NewTopic = () => {
       body: JSON.stringify(topic),
     }).then(() => {
       setLoading(false);
-      backHome.push('/');
+      backHome.push("/");
     });
   }
 
